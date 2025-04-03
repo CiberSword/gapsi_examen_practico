@@ -7,13 +7,14 @@ import { ProductItem } from '@/components/ProductItem/ProductItem.jsx';
 import { ItemContainer } from '@/components/ItemContainer/ItemContainer.jsx';
 import { SearchBar } from '@/components/SearchBar/SearchBar.jsx';
 
+{/*Este componente representa una aplicación del padron de diseño Container Component.
+se encarga de contener la lógica de negocio y los componentes de presentación (SearchBar, InfiniteScroll).*/}
+
 export const SearchView = () => {
   const [searchValue, setSearchValue] = useState('');
   const [triggerReset, setTriggerReset] = useState(false);
 
-  const handleSearch = () => {
-    refetch();
-  };
+  const handleSearch = () => refetch()
 
   const handleSearchValue = (newValue) => setSearchValue(newValue);
 
@@ -55,6 +56,8 @@ export const SearchView = () => {
         }}
       >
         <SearchBar searchValue={searchValue} handleSearch={handleSearch} handleSearchValue={handleSearchValue} />
+        {/*En este componente se aplica el Observer Pattern, ya que se "suscribe" a los movimientos del usuario
+        y cuando se llega al final de la vista se ejecuta una nueva consulta. */}
         <InfiniteScroll
           dataLength={productsArray ? productsArray?.results?.length : 0}
           next={() => fetchNextPage()}
