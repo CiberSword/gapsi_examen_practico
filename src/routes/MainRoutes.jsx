@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import {MainView} from "@/pages/MainView/MainView.jsx";
+import { MainView } from '@/pages/MainView/MainView.jsx';
 
 export const MainRoutes = () => {
     return (
