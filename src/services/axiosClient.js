@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const apiClient = axios.create({
+export const axiosClient = axios.create({
   baseURL: "https://axesso-walmart-data-service.p.rapidapi.com",
   headers: {
     "Content-Type": "application/json",
